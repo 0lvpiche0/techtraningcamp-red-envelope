@@ -1,0 +1,158 @@
+2021-11-05 23:54:44.906972254 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> CREATE TABLE biz_uuid( id uuid, name VARCHAR, PRIMARY KEY(id));
+                                                                [rbatis] [] Args   ==> []
+2021-11-05 23:54:44.953825498 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== error returned from database: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'uuid, name VARCHAR, PRIMARY KEY(id))' at line 1  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-05 23:54:44.957101408 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into biz_uuid (id,name) values (?,?)
+                                                                [rbatis] [] Args   ==> [Binary(0x4, ZGYwN2ZlYTItYjgxOS00ZTA1LWI4NmQtZGZjMTVhNWY1MmE5), "test"]
+2021-11-05 23:54:44.959630957 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== error returned from database: 1146 (42S02): Table 'MYDB.biz_uuid' doesn't exist  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-05 23:54:44.960477216 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> update biz_uuid set  name = ?  where id = ?
+                                                                [rbatis] [] Args   ==> ["test_updated", Binary(0x4, ZGYwN2ZlYTItYjgxOS00ZTA1LWI4NmQtZGZjMTVhNWY1MmE5)]
+2021-11-05 23:54:44.962001547 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== error returned from database: 1146 (42S02): Table 'MYDB.biz_uuid' doesn't exist  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-05 23:54:44.962631951 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select id,name from biz_uuid  where id = ? 
+                                                                [rbatis] [] Args   ==> [Binary(0x4, ZGYwN2ZlYTItYjgxOS00ZTA1LWI4NmQtZGZjMTVhNWY1MmE5)]
+2021-11-05 23:54:44.963704234 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== error returned from database: 1146 (42S02): Table 'MYDB.biz_uuid' doesn't exist  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-06 10:27:17.207836264 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> CREATE TABLE biz_uuid( id VARCHAR primary key COMMENT 'Primary Key', name VARCHAR, PRIMARY KEY(id));
+                                                                [rbatis] [] Args   ==> []
+2021-11-06 10:27:17.208171905 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== error returned from database: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'primary key COMMENT 'Primary Key', name VARCHAR, PRIMARY KEY(id))' at line 1  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-06 10:27:17.210664970 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into biz_uuid (id,name) values (?,?)
+                                                                [rbatis] [] Args   ==> [Binary(0x4, ZGYwN2ZlYTItYjgxOS00ZTA1LWI4NmQtZGZjMTVhNWY1MmE5), "test"]
+2021-11-06 10:27:17.213131776 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== error returned from database: 1146 (42S02): Table 'MYDB.biz_uuid' doesn't exist  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-06 10:27:17.213952849 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> update biz_uuid set  name = ?  where id = ?
+                                                                [rbatis] [] Args   ==> ["test_updated", Binary(0x4, ZGYwN2ZlYTItYjgxOS00ZTA1LWI4NmQtZGZjMTVhNWY1MmE5)]
+2021-11-06 10:27:17.215606717 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== error returned from database: 1146 (42S02): Table 'MYDB.biz_uuid' doesn't exist  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-06 10:27:17.217041935 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select id,name from biz_uuid  where id = ? 
+                                                                [rbatis] [] Args   ==> [Binary(0x4, ZGYwN2ZlYTItYjgxOS00ZTA1LWI4NmQtZGZjMTVhNWY1MmE5)]
+2021-11-06 10:27:17.218656068 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== error returned from database: 1146 (42S02): Table 'MYDB.biz_uuid' doesn't exist  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-06 14:14:17.950869733 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (rid,uid,snatch_time,status,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["rid_test1", "uid_test1", 0, 0, 0]
+2021-11-06 14:14:17.987916646 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-06 14:14:17.993556344 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where rid = ?
+                                                                [rbatis] [] Args   ==> ["rid_test1"]
+2021-11-06 14:14:17.996206688 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-06 14:15:45.571382243 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (rid,uid,snatch_time,status,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["rid_test1", "uid_test1", 0, 0, 0]
+2021-11-06 14:15:45.573983507 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== error returned from database: 1062 (23000): Duplicate entry 'rid_test1' for key 'envelope.PRIMARY'  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-06 14:22:01.293710863 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (rid,uid,snatch_time,status,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["rid_test1", "uid_test1", 0, 0, 0]
+2021-11-06 14:22:01.302361532 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-06 14:22:01.305715108 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where rid = ?
+                                                                [rbatis] [] Args   ==> ["rid_test1"]
+2021-11-06 14:22:01.307634879 UTC    INFO rbatis::plugin::log - [rbatis] [] ReturnRows <== 1
+2021-11-06 14:22:01.308238251 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> UPDATE envelope SET status = 1 WHERE id where rid = ?
+                                                                [rbatis] [] Args   ==> ["rid_test1"]
+2021-11-06 14:22:01.309224782 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== error returned from database: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where rid = ?' at line 1  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-06 14:24:09.096908824 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (rid,uid,snatch_time,status,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["rid_test1", "uid_test1", 0, 0, 0]
+2021-11-06 14:24:09.111041971 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-06 14:24:09.114381932 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where rid = ?
+                                                                [rbatis] [] Args   ==> ["rid_test1"]
+2021-11-06 14:24:09.116373296 UTC    INFO rbatis::plugin::log - [rbatis] [] ReturnRows <== 1
+2021-11-06 14:24:09.116827554 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> UPDATE envelope SET status = 1 WHERE id where rid = ?
+                                                                [rbatis] [] Args   ==> ["rid_test1"]
+2021-11-06 14:24:09.117629072 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== error returned from database: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where rid = ?' at line 1  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-06 14:26:24.042711540 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (rid,uid,snatch_time,status,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["rid_test1", "uid_test1", 0, 0, 0]
+2021-11-06 14:26:24.056996261 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-06 14:26:24.060976267 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where rid = ?
+                                                                [rbatis] [] Args   ==> ["rid_test1"]
+2021-11-06 14:26:24.062830670 UTC    INFO rbatis::plugin::log - [rbatis] [] ReturnRows <== 1
+2021-11-06 14:26:24.063244630 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> UPDATE envelope SET status = 1 WHERE rid = ?
+                                                                [rbatis] [] Args   ==> ["rid_test1"]
+2021-11-06 14:26:24.070683264 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected u64  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-06 14:27:52.069226769 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (rid,uid,snatch_time,status,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["rid_test1", "uid_test1", 0, 0, 0]
+2021-11-06 14:27:52.070582110 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== error returned from database: 1062 (23000): Duplicate entry 'rid_test1' for key 'envelope.PRIMARY'  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-06 14:28:15.635266288 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (rid,uid,snatch_time,status,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["rid_test1", "uid_test1", 0, 0, 0]
+2021-11-06 14:28:15.644538363 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-06 14:28:15.647286552 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where rid = ?
+                                                                [rbatis] [] Args   ==> ["rid_test1"]
+2021-11-06 14:28:15.649013520 UTC    INFO rbatis::plugin::log - [rbatis] [] ReturnRows <== 1
+2021-11-06 14:28:15.649884442 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> UPDATE envelope SET status = 1 WHERE rid = ?
+                                                                [rbatis] [] Args   ==> ["rid_test1"]
+2021-11-06 14:28:15.658360115 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected usize  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-06 14:30:01.114972257 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (rid,uid,snatch_time,status,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["rid_test1", "uid_test1", 0, 0, 0]
+2021-11-06 14:30:01.116303789 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== error returned from database: 1062 (23000): Duplicate entry 'rid_test1' for key 'envelope.PRIMARY'  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-06 14:30:07.877555752 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (rid,uid,snatch_time,status,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["rid_test1", "uid_test1", 0, 0, 0]
+2021-11-06 14:30:07.884989214 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-06 14:30:07.887992617 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where rid = ?
+                                                                [rbatis] [] Args   ==> ["rid_test1"]
+2021-11-06 14:30:07.889908584 UTC    INFO rbatis::plugin::log - [rbatis] [] ReturnRows <== 1
+2021-11-06 14:30:07.890447273 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> UPDATE envelope SET status = 1 WHERE rid = ?
+                                                                [rbatis] [] Args   ==> ["rid_test1"]
+2021-11-06 14:30:07.897888627 UTC    INFO rbatis::plugin::log - [rbatis] [] ReturnRows <== 0
+2021-11-06 14:30:07.898415373 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> delete from envelope where rid = ?
+                                                                [rbatis] [] Args   ==> ["rid_test1"]
+2021-11-06 14:30:07.907452331 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-06 14:37:48.688630945 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> INSERT INTO envelope (rid,uid,snatch_time,status,value) VALUES (?, ?, ?, ?, ?)
+                                                                [rbatis] [] Args   ==> [{ "rid": "_______this_nothing____rid_test1", "uid": "_______this_nothing____uid_test1", "snatch_time": 0, "status": 0, "value": 0 }]
+2021-11-06 14:38:36.906509275 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (rid,uid,snatch_time,status,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["_______this_nothing____rid_test1", "_______this_nothing____uid_test1", 0, 0, 0]
+2021-11-06 14:38:36.957009159 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-06 14:38:36.960665832 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where rid = ?
+                                                                [rbatis] [] Args   ==> ["_______this_nothing____rid_test1"]
+2021-11-06 14:38:36.962960436 UTC    INFO rbatis::plugin::log - [rbatis] [] ReturnRows <== 1
+2021-11-06 14:38:36.964242116 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> UPDATE envelope SET status = 1 WHERE rid = ?
+                                                                [rbatis] [] Args   ==> ["_______this_nothing____rid_test1"]
+2021-11-06 14:38:36.972601283 UTC    INFO rbatis::plugin::log - [rbatis] [] ReturnRows <== 0
+2021-11-06 14:38:36.973071322 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> delete from envelope where rid = ?
+                                                                [rbatis] [] Args   ==> ["_______this_nothing____rid_test1"]
+2021-11-06 14:38:36.982287876 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-06 15:05:38.520471683 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> create table if not exists envelope(rid varchar primary key not null, uid varchar not null, value int not null, status smallint not null,snatch_time bigint not null);
+                                                                [rbatis] [] Args   ==> []
+2021-11-06 15:05:38.524215422 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== error returned from database: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'primary key not null, uid varchar not null, value int not null, status smallint ' at line 1  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-06 15:17:56.993895673 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> create table if not exists envelope(rid varchar(255) primary key not null,uid varchar(255) not null,value int not null,status smallint not null,snatch_time bigint not null);
+                                                                [rbatis] [] Args   ==> []
+2021-11-06 15:17:57.055993394 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 0
+2021-11-06 15:17:57.059784188 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (rid,uid,snatch_time,status,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["_______this_nothing____rid_test1", "_______this_nothing____uid_test1", 0, 0, 0]
+2021-11-06 15:17:57.068681172 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-06 15:17:57.069060063 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where rid = ?
+                                                                [rbatis] [] Args   ==> ["_______this_nothing____rid_test1"]
+2021-11-06 15:17:57.070991184 UTC    INFO rbatis::plugin::log - [rbatis] [] ReturnRows <== 1
+2021-11-06 15:17:57.071343675 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> UPDATE envelope SET status = 1 WHERE rid = ?
+                                                                [rbatis] [] Args   ==> ["_______this_nothing____rid_test1"]
+2021-11-06 15:17:57.095041356 UTC    INFO rbatis::plugin::log - [rbatis] [] ReturnRows <== 0
+2021-11-06 15:17:57.095677473 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> delete from envelope where rid = ?
+                                                                [rbatis] [] Args   ==> ["_______this_nothing____rid_test1"]
+2021-11-06 15:17:57.133215878 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-06 15:42:42.893884116 UTC    INFO red_packet_transport::server - Starting event loop
+2021-11-06 15:42:45.904935188 UTC    ERROR red_packet_transport - task panicked  (src/main.rs:9)
+2021-11-06 15:44:34.358096198 UTC    INFO red_packet_transport::server - Starting event loop
+2021-11-06 15:45:12.902144647 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7fd4c8002e48 }
+2021-11-06 15:45:16.555874411 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7fd4c8003208 }
+2021-11-06 15:45:20.082276066 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7fd4c80035c8 }
+2021-11-06 15:45:23.541751812 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7fd4c8003a18 }
+2021-11-06 15:45:27.110238491 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7fd4c8003e68 }
+2021-11-06 15:45:30.712206565 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7fd4c80042b8 }
+2021-11-06 15:45:34.173370445 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7fd4c8004708 }
+2021-11-06 15:45:37.813142588 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7fd4c8004b58 }
+2021-11-06 15:45:41.359714639 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7fd4c8004ac8 }
+2021-11-06 15:45:44.842174068 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7fd4c8004ac8 }
+2021-11-06 15:45:56.472368043 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7fd4c8004ac8 }
+2021-11-06 15:45:59.052428416 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7fd4c8004ac8 }
+2021-11-06 15:52:11.171615219 UTC    INFO red_packet_transport::server - Starting event loop
+2021-11-06 15:52:23.242068310 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7f90f8002e48 }
+2021-11-06 15:52:26.765278571 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7f90f8003208 }
+2021-11-06 15:52:30.398577191 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7f90f80035c8 }
+2021-11-06 15:52:33.957542749 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7f90f8003a18 }
+2021-11-06 15:52:37.597625698 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7f90f8003e68 }
+2021-11-06 15:52:41.061205255 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7f90f80042b8 }
+2021-11-06 15:52:44.588302145 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7f90f8004708 }
+2021-11-06 15:52:48.114875955 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7f90f8004b58 }
+2021-11-06 15:52:51.576186037 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7f90f8004fa8 }
+2021-11-06 15:52:55.099751686 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7f90f80053f8 }
+2021-11-06 21:47:49.446100904 UTC    INFO red_packet_transport::server - Starting event loop
+2021-11-06 22:00:13.104123804 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7f3c2c002e48 }
+2021-11-06 22:00:16.678963369 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7f3c2c003208 }
+2021-11-06 22:00:20.269639050 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7f3c2c003658 }
+2021-11-06 22:00:23.846332081 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7f3c2c003aa8 }
+2021-11-06 22:00:27.478019995 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7f3c2c003bd8 }
+2021-11-06 22:00:31.077772930 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7f3c2c004028 }
+2021-11-06 22:00:34.691400772 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7f3c2c004478 }
+2021-11-06 22:00:38.322070117 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7f3c2c0048c8 }
+2021-11-06 22:00:41.830712 UTC       INFO red_packet_transport::server - Message received: Message { ptr: 0x7f3c2c004d18 }
+2021-11-06 22:00:45.403965758 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7f3c2c005168 }
+2021-11-06 22:06:39.331507566 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7f3c2c005508 }
+2021-11-06 22:12:27.890663241 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7f3c2c005478 }
