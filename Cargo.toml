@@ -1,5 +1,5 @@
 [package]
-name = "red_packet_transport"
+name = "techtraingcamp-red-envelope"
 version = "0.1.0"
 edition = "2021"
 
@@ -14,7 +14,7 @@ rbatis = { version = "3.0", default-features = false, features = ["mysql","runti
 serde = { version = "1", features = ["derive"] }
 bson = "2.0.1"
 log = "0.4"
-lazy_static = "*"
+lazy_static = "1.4"
 fast_log="1.3"
 rdkafka = { version = "0.27", features = ["cmake-build"] }
 futures = "*"

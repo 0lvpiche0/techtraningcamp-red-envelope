@@ -1,6 +1,5 @@
 use futures::TryStreamExt;
 use log::info;
-use serde_json::Deserializer;
 use rbatis::crud::CRUD;
 use rdkafka::Message;
 use crate::{db, model};
@@ -11,7 +10,7 @@ use rdkafka::message::BorrowedMessage;
 async fn record_borrowed_message_receipt(msg: &BorrowedMessage<'_>) {
     // Simulate some work that must be done in the same order as messages are
     // received; i.e., before truly parallel processing can begin.
-    info!("Message received: {:?}", msg);
+    info!("Message received partition: {:?}", msg.partition());
     let p = msg.payload_view::<str>();
     println!("{:?}", p);
     // todo json to envelop
@@ -50,7 +49,7 @@ pub async fn run_async_processor(consumer: StreamConsumer) {
     let stream_processor = consumer.stream().try_for_each(|borrowed_message| {
         async move {
             // Here are the different ways to deal with it, but I think that the task is expensive_computation in this case (lvpiche)
-            // Process each message
+            // Process each message, this func is used to test and it print msg
             record_borrowed_message_receipt(&borrowed_message).await;
             // Borrowed messages can't outlive the consumer they are received from, so they need to
             // be owned in order to be sent to a separate thread.
@@ -58,15 +57,8 @@ pub async fn run_async_processor(consumer: StreamConsumer) {
             // let owned_message = borrowed_message.detach();
             // tokio::spawn(async move {
             //     owned_message.payload_view::<str>().and_then(|msg| async {
-            //         match msg {
-            //             Ok(s) => {
-            //                 let envelope:model::Envelope = Deserializer::from_str(s);
-            //                 if let Err(e) = envelope_server(&envelope).await {
-            //                     log::error!("{:?} {:?}", envelope, e);
-            //                 }
-            //             },
-            //             Err(e) => log::error!("{:?} {:?}", envelope, e),
-            //         }
+
+                    
             //     });
             // });
             Ok(())

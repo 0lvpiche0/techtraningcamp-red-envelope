@@ -1,7 +1,9 @@
 use crate::db;
+use serde::Deserialize;
+
 
 #[crud_table]
-#[derive(Clone, Debug, PartialEq)]
+#[derive(Debug, PartialEq)]
 pub struct Envelope {
     pub rid: String,
     pub uid: String,

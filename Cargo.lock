@@ -1599,22 +1599,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "red_packet_transport"
-version = "0.1.0"
-dependencies = [
- "bson",
- "fast_log",
- "futures",
- "lazy_static",
- "log",
- "rbatis",
- "rdkafka",
- "serde",
- "serde_json",
- "tokio",
-]
-
-[[package]]
 name = "redox_syscall"
 version = "0.2.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2104,6 +2088,22 @@ dependencies = [
  "quote",
  "syn",
  "unicode-xid",
+]
+
+[[package]]
+name = "techtraingcamp-red-envelope"
+version = "0.1.0"
+dependencies = [
+ "bson",
+ "fast_log",
+ "futures",
+ "lazy_static",
+ "log",
+ "rbatis",
+ "rdkafka",
+ "serde",
+ "serde_json",
+ "tokio",
 ]
 
 [[package]]
