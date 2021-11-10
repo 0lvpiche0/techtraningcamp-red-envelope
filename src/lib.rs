@@ -21,6 +21,8 @@ impl App {
         let (config, topics) = kafka::kafka_config_init();
         let num_workers = utils::get_env("KAFKA_NUM_WORKERS", config::DAFAULT_KAFKA_NUM_WORKERS)
             .parse::<usize>().unwrap();
+        // log output
+        fast_log::init_log("log/requests.log", 1000, log::Level::Error, None, true).unwrap();
         App {
             config,
             topics,

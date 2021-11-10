@@ -18,8 +18,6 @@ pub async fn new_rb() {
     RB.as_executor().exec(
         "create table if not exists envelope(envelope_id varchar(255) primary key not null,user_id varchar(255) not null,value int not null,opened boolean not null,snatch_time bigint not null);"
         , Vec::new()).await.unwrap();
-    // log output
-    // fast_log::init_log("requests.log", 1000, log::Level::Info, None, true).unwrap();
 }
 
 
@@ -31,7 +29,7 @@ mod test {
     use super::*;
     #[tokio::test]
     pub async fn db_test() {
-        fast_log::init_log("requests.log", 1000, log::Level::Info, None, true).unwrap();
+        fast_log::init_log("log/requests.log", 1000, log::Level::Info, None, true).unwrap();
         let url = format!(
             "mysql://{}:{}@{}:{}/{}",
             utils::get_env("MYSQL_ROOT_USERNAME", "root"),
