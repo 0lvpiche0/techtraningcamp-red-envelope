@@ -5,10 +5,6 @@ lazy_static::lazy_static! {
     pub static ref RB:Rbatis = Rbatis::new();
 }
 
-
-
-
-
 pub async fn new_rb() {
     let url = format!(
         "mysql://{}:{}@{}:{}/{}",
@@ -20,7 +16,7 @@ pub async fn new_rb() {
     );
     RB.link(&url).await.unwrap();
     RB.as_executor().exec(
-        "create table if not exists envelope(rid varchar(255) primary key not null,uid varchar(255) not null,value int not null,status smallint not null,snatch_time bigint not null);"
+        "create table if not exists envelope(envelope_id varchar(255) primary key not null,user_id varchar(255) not null,value int not null,opened boolean not null,snatch_time bigint not null);"
         , Vec::new()).await.unwrap();
     // db max_connections
     // use crate::core::db::DBPoolOptions;
@@ -51,23 +47,23 @@ mod test {
         );
         RB.link(&url).await.unwrap();
         RB.as_executor().exec(
-            "create table if not exists envelope(rid varchar(255) primary key not null,uid varchar(255) not null,value int not null,status smallint not null,snatch_time bigint not null);"
+            "create table if not exists envelope(envelope_id varchar(255) primary key not null,user_id varchar(255) not null,value int not null,opened boolean not null,snatch_time bigint not null);"
             , Vec::new()).await.unwrap();
         let envelope = model::Envelope {
-            rid: String::from("_______this_nothing____rid_test1"),
-            uid: String::from("_______this_nothing____uid_test1"),
-            status: 0,
+            envelope_id: String::from("_______this_nothing____rid_test1"),
+            user_id: String::from("_______this_nothing____uid_test1"),
+            opened: false,
             value: 0,
             snatch_time: 0,
         };
         RB.save(&envelope, &[]).await.unwrap();
         // model::add_envelope(&envelope).await.unwrap();
-        let r= model::select_by_rid(&envelope.rid).await.unwrap();
+        let r= model::select_by_rid(&envelope.envelope_id).await.unwrap();
         // println!("{:?}", r);
         assert_eq!(r, envelope);
-        model::update_status_by_rid(&envelope.rid).await.unwrap();
+        model::update_status_by_rid(&envelope.envelope_id).await.unwrap();
         assert_eq!(
-            RB.remove_by_column::<model::Envelope, _>("rid", &envelope.rid).await.unwrap(),
+            RB.remove_by_column::<model::Envelope, _>("envelope_id", &envelope.envelope_id).await.unwrap(),
             1
         );
     }

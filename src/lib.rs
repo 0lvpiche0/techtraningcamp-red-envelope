@@ -1,8 +1,6 @@
 #[macro_use]
 extern crate rbatis;
 
-
-
 mod server;
 mod model;
 mod db;
@@ -28,13 +26,6 @@ impl App {
         }
     }
     pub async fn run(&self) -> std::io::Result<()>{
-        // (0..self.num_workers)
-        // .map(|_| {
-        //     tokio::spawn( server::run_async_processor(&self.config))
-        // })
-        // .collect::<FuturesUnordered<_>>()
-        // .for_each(|_| async { () })
-        // .await
         let mut workers: Vec<tokio::task::JoinHandle<_>> = Vec::with_capacity(self.num_workers);
         for _ in 0..self.num_workers {
             let consumer = kafka::new_stream_consumer(&self.config, &self.topics);

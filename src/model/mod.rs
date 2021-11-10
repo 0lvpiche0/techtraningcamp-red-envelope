@@ -1,20 +1,21 @@
 use crate::db;
 
 #[crud_table]
-#[derive(Clone, Debug, PartialEq)]
+#[derive(Debug, PartialEq)]
 pub struct Envelope {
-    pub rid: String,
-    pub uid: String,
+    pub envelope_id: String,
+    pub user_id: String,
     pub snatch_time: u64,
-    pub status: u8,
+    pub opened: bool,
     pub value: u64,
 }
 
-#[sql(db::RB, "select * from envelope where rid = ?")]
-pub async fn select_by_rid(rid: &str) -> Envelope {}
 
-#[sql(db::RB, "UPDATE envelope SET status = 1 WHERE rid = ?")]
-pub async fn update_status_by_rid(rid: &str) -> () {}
+#[sql(db::RB, "select * from envelope where envelope_id = ?")]
+pub async fn select_by_rid(envelope_id: &str) -> Envelope {}
+
+#[sql(db::RB, "UPDATE envelope SET opened = true WHERE envelope_id = ?")]
+pub async fn update_status_by_rid(envelope_id: &str) -> () {}
 
 // #[sql(db::RB, "INSERT INTO envelope (rid,uid,snatch_time,status,value) VALUES (?, ?, ?, ?, ?)")]
 // pub async fn add_envelope(rid: &Envelope) -> () {}

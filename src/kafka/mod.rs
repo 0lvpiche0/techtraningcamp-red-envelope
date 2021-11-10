@@ -18,6 +18,8 @@ pub fn new_stream_consumer(config: &HashMap<String, String>, topics: &[String]) 
     stream_consumer
 }
 
+// pub fn new_consumer(config: &HashMap<String, String>, topics: &[String]) -> d
+
 fn get_topics() -> Vec<String> {
     vec!["test001".to_string()]
 }
