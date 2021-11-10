@@ -1,4 +1,4 @@
-use red_packet_transport::App;
+use techtraingcamp_red_envelope::App;
 
 
 #[tokio::main]

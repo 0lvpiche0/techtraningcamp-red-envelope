@@ -1,708 +1,615 @@
-2021-11-05 23:54:44.906972254 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> CREATE TABLE biz_uuid( id uuid, name VARCHAR, PRIMARY KEY(id));
-                                                                [rbatis] [] Args   ==> []
-2021-11-05 23:54:44.953825498 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== error returned from database: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'uuid, name VARCHAR, PRIMARY KEY(id))' at line 1  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
-2021-11-05 23:54:44.957101408 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into biz_uuid (id,name) values (?,?)
-                                                                [rbatis] [] Args   ==> [Binary(0x4, ZGYwN2ZlYTItYjgxOS00ZTA1LWI4NmQtZGZjMTVhNWY1MmE5), "test"]
-2021-11-05 23:54:44.959630957 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== error returned from database: 1146 (42S02): Table 'MYDB.biz_uuid' doesn't exist  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
-2021-11-05 23:54:44.960477216 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> update biz_uuid set  name = ?  where id = ?
-                                                                [rbatis] [] Args   ==> ["test_updated", Binary(0x4, ZGYwN2ZlYTItYjgxOS00ZTA1LWI4NmQtZGZjMTVhNWY1MmE5)]
-2021-11-05 23:54:44.962001547 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== error returned from database: 1146 (42S02): Table 'MYDB.biz_uuid' doesn't exist  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
-2021-11-05 23:54:44.962631951 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select id,name from biz_uuid  where id = ? 
-                                                                [rbatis] [] Args   ==> [Binary(0x4, ZGYwN2ZlYTItYjgxOS00ZTA1LWI4NmQtZGZjMTVhNWY1MmE5)]
-2021-11-05 23:54:44.963704234 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== error returned from database: 1146 (42S02): Table 'MYDB.biz_uuid' doesn't exist  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
-2021-11-06 10:27:17.207836264 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> CREATE TABLE biz_uuid( id VARCHAR primary key COMMENT 'Primary Key', name VARCHAR, PRIMARY KEY(id));
-                                                                [rbatis] [] Args   ==> []
-2021-11-06 10:27:17.208171905 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== error returned from database: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'primary key COMMENT 'Primary Key', name VARCHAR, PRIMARY KEY(id))' at line 1  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
-2021-11-06 10:27:17.210664970 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into biz_uuid (id,name) values (?,?)
-                                                                [rbatis] [] Args   ==> [Binary(0x4, ZGYwN2ZlYTItYjgxOS00ZTA1LWI4NmQtZGZjMTVhNWY1MmE5), "test"]
-2021-11-06 10:27:17.213131776 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== error returned from database: 1146 (42S02): Table 'MYDB.biz_uuid' doesn't exist  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
-2021-11-06 10:27:17.213952849 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> update biz_uuid set  name = ?  where id = ?
-                                                                [rbatis] [] Args   ==> ["test_updated", Binary(0x4, ZGYwN2ZlYTItYjgxOS00ZTA1LWI4NmQtZGZjMTVhNWY1MmE5)]
-2021-11-06 10:27:17.215606717 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== error returned from database: 1146 (42S02): Table 'MYDB.biz_uuid' doesn't exist  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
-2021-11-06 10:27:17.217041935 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select id,name from biz_uuid  where id = ? 
-                                                                [rbatis] [] Args   ==> [Binary(0x4, ZGYwN2ZlYTItYjgxOS00ZTA1LWI4NmQtZGZjMTVhNWY1MmE5)]
-2021-11-06 10:27:17.218656068 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== error returned from database: 1146 (42S02): Table 'MYDB.biz_uuid' doesn't exist  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
-2021-11-06 14:14:17.950869733 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (rid,uid,snatch_time,status,value) values (?,?,?,?,?)
-                                                                [rbatis] [] Args   ==> ["rid_test1", "uid_test1", 0, 0, 0]
-2021-11-06 14:14:17.987916646 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
-2021-11-06 14:14:17.993556344 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where rid = ?
-                                                                [rbatis] [] Args   ==> ["rid_test1"]
-2021-11-06 14:14:17.996206688 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
-2021-11-06 14:15:45.571382243 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (rid,uid,snatch_time,status,value) values (?,?,?,?,?)
-                                                                [rbatis] [] Args   ==> ["rid_test1", "uid_test1", 0, 0, 0]
-2021-11-06 14:15:45.573983507 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== error returned from database: 1062 (23000): Duplicate entry 'rid_test1' for key 'envelope.PRIMARY'  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
-2021-11-06 14:22:01.293710863 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (rid,uid,snatch_time,status,value) values (?,?,?,?,?)
-                                                                [rbatis] [] Args   ==> ["rid_test1", "uid_test1", 0, 0, 0]
-2021-11-06 14:22:01.302361532 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
-2021-11-06 14:22:01.305715108 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where rid = ?
-                                                                [rbatis] [] Args   ==> ["rid_test1"]
-2021-11-06 14:22:01.307634879 UTC    INFO rbatis::plugin::log - [rbatis] [] ReturnRows <== 1
-2021-11-06 14:22:01.308238251 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> UPDATE envelope SET status = 1 WHERE id where rid = ?
-                                                                [rbatis] [] Args   ==> ["rid_test1"]
-2021-11-06 14:22:01.309224782 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== error returned from database: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where rid = ?' at line 1  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
-2021-11-06 14:24:09.096908824 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (rid,uid,snatch_time,status,value) values (?,?,?,?,?)
-                                                                [rbatis] [] Args   ==> ["rid_test1", "uid_test1", 0, 0, 0]
-2021-11-06 14:24:09.111041971 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
-2021-11-06 14:24:09.114381932 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where rid = ?
-                                                                [rbatis] [] Args   ==> ["rid_test1"]
-2021-11-06 14:24:09.116373296 UTC    INFO rbatis::plugin::log - [rbatis] [] ReturnRows <== 1
-2021-11-06 14:24:09.116827554 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> UPDATE envelope SET status = 1 WHERE id where rid = ?
-                                                                [rbatis] [] Args   ==> ["rid_test1"]
-2021-11-06 14:24:09.117629072 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== error returned from database: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where rid = ?' at line 1  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
-2021-11-06 14:26:24.042711540 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (rid,uid,snatch_time,status,value) values (?,?,?,?,?)
-                                                                [rbatis] [] Args   ==> ["rid_test1", "uid_test1", 0, 0, 0]
-2021-11-06 14:26:24.056996261 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
-2021-11-06 14:26:24.060976267 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where rid = ?
-                                                                [rbatis] [] Args   ==> ["rid_test1"]
-2021-11-06 14:26:24.062830670 UTC    INFO rbatis::plugin::log - [rbatis] [] ReturnRows <== 1
-2021-11-06 14:26:24.063244630 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> UPDATE envelope SET status = 1 WHERE rid = ?
-                                                                [rbatis] [] Args   ==> ["rid_test1"]
-2021-11-06 14:26:24.070683264 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected u64  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
-2021-11-06 14:27:52.069226769 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (rid,uid,snatch_time,status,value) values (?,?,?,?,?)
-                                                                [rbatis] [] Args   ==> ["rid_test1", "uid_test1", 0, 0, 0]
-2021-11-06 14:27:52.070582110 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== error returned from database: 1062 (23000): Duplicate entry 'rid_test1' for key 'envelope.PRIMARY'  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
-2021-11-06 14:28:15.635266288 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (rid,uid,snatch_time,status,value) values (?,?,?,?,?)
-                                                                [rbatis] [] Args   ==> ["rid_test1", "uid_test1", 0, 0, 0]
-2021-11-06 14:28:15.644538363 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
-2021-11-06 14:28:15.647286552 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where rid = ?
-                                                                [rbatis] [] Args   ==> ["rid_test1"]
-2021-11-06 14:28:15.649013520 UTC    INFO rbatis::plugin::log - [rbatis] [] ReturnRows <== 1
-2021-11-06 14:28:15.649884442 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> UPDATE envelope SET status = 1 WHERE rid = ?
-                                                                [rbatis] [] Args   ==> ["rid_test1"]
-2021-11-06 14:28:15.658360115 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected usize  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
-2021-11-06 14:30:01.114972257 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (rid,uid,snatch_time,status,value) values (?,?,?,?,?)
-                                                                [rbatis] [] Args   ==> ["rid_test1", "uid_test1", 0, 0, 0]
-2021-11-06 14:30:01.116303789 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== error returned from database: 1062 (23000): Duplicate entry 'rid_test1' for key 'envelope.PRIMARY'  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
-2021-11-06 14:30:07.877555752 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (rid,uid,snatch_time,status,value) values (?,?,?,?,?)
-                                                                [rbatis] [] Args   ==> ["rid_test1", "uid_test1", 0, 0, 0]
-2021-11-06 14:30:07.884989214 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
-2021-11-06 14:30:07.887992617 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where rid = ?
-                                                                [rbatis] [] Args   ==> ["rid_test1"]
-2021-11-06 14:30:07.889908584 UTC    INFO rbatis::plugin::log - [rbatis] [] ReturnRows <== 1
-2021-11-06 14:30:07.890447273 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> UPDATE envelope SET status = 1 WHERE rid = ?
-                                                                [rbatis] [] Args   ==> ["rid_test1"]
-2021-11-06 14:30:07.897888627 UTC    INFO rbatis::plugin::log - [rbatis] [] ReturnRows <== 0
-2021-11-06 14:30:07.898415373 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> delete from envelope where rid = ?
-                                                                [rbatis] [] Args   ==> ["rid_test1"]
-2021-11-06 14:30:07.907452331 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
-2021-11-06 14:37:48.688630945 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> INSERT INTO envelope (rid,uid,snatch_time,status,value) VALUES (?, ?, ?, ?, ?)
-                                                                [rbatis] [] Args   ==> [{ "rid": "_______this_nothing____rid_test1", "uid": "_______this_nothing____uid_test1", "snatch_time": 0, "status": 0, "value": 0 }]
-2021-11-06 14:38:36.906509275 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (rid,uid,snatch_time,status,value) values (?,?,?,?,?)
-                                                                [rbatis] [] Args   ==> ["_______this_nothing____rid_test1", "_______this_nothing____uid_test1", 0, 0, 0]
-2021-11-06 14:38:36.957009159 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
-2021-11-06 14:38:36.960665832 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where rid = ?
-                                                                [rbatis] [] Args   ==> ["_______this_nothing____rid_test1"]
-2021-11-06 14:38:36.962960436 UTC    INFO rbatis::plugin::log - [rbatis] [] ReturnRows <== 1
-2021-11-06 14:38:36.964242116 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> UPDATE envelope SET status = 1 WHERE rid = ?
-                                                                [rbatis] [] Args   ==> ["_______this_nothing____rid_test1"]
-2021-11-06 14:38:36.972601283 UTC    INFO rbatis::plugin::log - [rbatis] [] ReturnRows <== 0
-2021-11-06 14:38:36.973071322 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> delete from envelope where rid = ?
-                                                                [rbatis] [] Args   ==> ["_______this_nothing____rid_test1"]
-2021-11-06 14:38:36.982287876 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
-2021-11-06 15:05:38.520471683 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> create table if not exists envelope(rid varchar primary key not null, uid varchar not null, value int not null, status smallint not null,snatch_time bigint not null);
-                                                                [rbatis] [] Args   ==> []
-2021-11-06 15:05:38.524215422 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== error returned from database: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'primary key not null, uid varchar not null, value int not null, status smallint ' at line 1  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
-2021-11-06 15:17:56.993895673 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> create table if not exists envelope(rid varchar(255) primary key not null,uid varchar(255) not null,value int not null,status smallint not null,snatch_time bigint not null);
-                                                                [rbatis] [] Args   ==> []
-2021-11-06 15:17:57.055993394 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 0
-2021-11-06 15:17:57.059784188 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (rid,uid,snatch_time,status,value) values (?,?,?,?,?)
-                                                                [rbatis] [] Args   ==> ["_______this_nothing____rid_test1", "_______this_nothing____uid_test1", 0, 0, 0]
-2021-11-06 15:17:57.068681172 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
-2021-11-06 15:17:57.069060063 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where rid = ?
-                                                                [rbatis] [] Args   ==> ["_______this_nothing____rid_test1"]
-2021-11-06 15:17:57.070991184 UTC    INFO rbatis::plugin::log - [rbatis] [] ReturnRows <== 1
-2021-11-06 15:17:57.071343675 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> UPDATE envelope SET status = 1 WHERE rid = ?
-                                                                [rbatis] [] Args   ==> ["_______this_nothing____rid_test1"]
-2021-11-06 15:17:57.095041356 UTC    INFO rbatis::plugin::log - [rbatis] [] ReturnRows <== 0
-2021-11-06 15:17:57.095677473 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> delete from envelope where rid = ?
-                                                                [rbatis] [] Args   ==> ["_______this_nothing____rid_test1"]
-2021-11-06 15:17:57.133215878 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
-2021-11-06 15:42:42.893884116 UTC    INFO red_packet_transport::server - Starting event loop
-2021-11-06 15:42:45.904935188 UTC    ERROR red_packet_transport - task panicked  (src/main.rs:9)
-2021-11-06 15:44:34.358096198 UTC    INFO red_packet_transport::server - Starting event loop
-2021-11-06 15:45:12.902144647 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7fd4c8002e48 }
-2021-11-06 15:45:16.555874411 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7fd4c8003208 }
-2021-11-06 15:45:20.082276066 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7fd4c80035c8 }
-2021-11-06 15:45:23.541751812 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7fd4c8003a18 }
-2021-11-06 15:45:27.110238491 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7fd4c8003e68 }
-2021-11-06 15:45:30.712206565 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7fd4c80042b8 }
-2021-11-06 15:45:34.173370445 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7fd4c8004708 }
-2021-11-06 15:45:37.813142588 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7fd4c8004b58 }
-2021-11-06 15:45:41.359714639 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7fd4c8004ac8 }
-2021-11-06 15:45:44.842174068 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7fd4c8004ac8 }
-2021-11-06 15:45:56.472368043 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7fd4c8004ac8 }
-2021-11-06 15:45:59.052428416 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7fd4c8004ac8 }
-2021-11-06 15:52:11.171615219 UTC    INFO red_packet_transport::server - Starting event loop
-2021-11-06 15:52:23.242068310 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7f90f8002e48 }
-2021-11-06 15:52:26.765278571 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7f90f8003208 }
-2021-11-06 15:52:30.398577191 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7f90f80035c8 }
-2021-11-06 15:52:33.957542749 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7f90f8003a18 }
-2021-11-06 15:52:37.597625698 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7f90f8003e68 }
-2021-11-06 15:52:41.061205255 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7f90f80042b8 }
-2021-11-06 15:52:44.588302145 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7f90f8004708 }
-2021-11-06 15:52:48.114875955 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7f90f8004b58 }
-2021-11-06 15:52:51.576186037 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7f90f8004fa8 }
-2021-11-06 15:52:55.099751686 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7f90f80053f8 }
-2021-11-06 21:47:49.446100904 UTC    INFO red_packet_transport::server - Starting event loop
-2021-11-06 22:00:13.104123804 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7f3c2c002e48 }
-2021-11-06 22:00:16.678963369 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7f3c2c003208 }
-2021-11-06 22:00:20.269639050 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7f3c2c003658 }
-2021-11-06 22:00:23.846332081 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7f3c2c003aa8 }
-2021-11-06 22:00:27.478019995 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7f3c2c003bd8 }
-2021-11-06 22:00:31.077772930 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7f3c2c004028 }
-2021-11-06 22:00:34.691400772 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7f3c2c004478 }
-2021-11-06 22:00:38.322070117 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7f3c2c0048c8 }
-2021-11-06 22:00:41.830712 UTC       INFO red_packet_transport::server - Message received: Message { ptr: 0x7f3c2c004d18 }
-2021-11-06 22:00:45.403965758 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7f3c2c005168 }
-2021-11-06 22:06:39.331507566 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7f3c2c005508 }
-2021-11-06 22:12:27.890663241 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7f3c2c005478 }
-2021-11-07 18:11:07.819220419 UTC    INFO red_packet_transport::server - Starting event loop
-2021-11-07 18:11:07.819557683 UTC    ERROR rdkafka::client - librdkafka: FAIL [thrd:localhost:9092/bootstrap]: localhost:9092/bootstrap: Connect to ipv4#127.0.0.1:9092 failed: Connection refused (after 0ms in state CONNECT)  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rdkafka-0.27.0/src/client.rs:63)
-2021-11-07 18:11:07.819696457 UTC    ERROR rdkafka::client - librdkafka: Global error: BrokerTransportFailure (Local: Broker transport failure): localhost:9092/bootstrap: Connect to ipv4#127.0.0.1:9092 failed: Connection refused (after 0ms in state CONNECT)  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rdkafka-0.27.0/src/client.rs:92)
-2021-11-07 18:11:07.819751842 UTC    ERROR rdkafka::client - librdkafka: Global error: AllBrokersDown (Local: All broker connections are down): 1/1 brokers are down  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rdkafka-0.27.0/src/client.rs:92)
-2021-11-07 18:11:08.818534817 UTC    ERROR rdkafka::client - librdkafka: FAIL [thrd:localhost:9092/bootstrap]: localhost:9092/bootstrap: Connect to ipv6#[::1]:9092 failed: Connection refused (after 0ms in state CONNECT)  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rdkafka-0.27.0/src/client.rs:63)
-2021-11-07 18:11:08.818775840 UTC    ERROR rdkafka::client - librdkafka: Global error: BrokerTransportFailure (Local: Broker transport failure): localhost:9092/bootstrap: Connect to ipv6#[::1]:9092 failed: Connection refused (after 0ms in state CONNECT)  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rdkafka-0.27.0/src/client.rs:92)
-2021-11-07 18:11:09.818641286 UTC    ERROR rdkafka::client - librdkafka: FAIL [thrd:localhost:9092/bootstrap]: localhost:9092/bootstrap: Connect to ipv6#[::1]:9092 failed: Connection refused (after 0ms in state CONNECT, 1 identical error(s) suppressed)  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rdkafka-0.27.0/src/client.rs:63)
-2021-11-07 18:11:09.819150219 UTC    ERROR rdkafka::client - librdkafka: Global error: BrokerTransportFailure (Local: Broker transport failure): localhost:9092/bootstrap: Connect to ipv6#[::1]:9092 failed: Connection refused (after 0ms in state CONNECT, 1 identical error(s) suppressed)  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rdkafka-0.27.0/src/client.rs:92)
-2021-11-07 18:11:10.818940935 UTC    ERROR rdkafka::client - librdkafka: FAIL [thrd:localhost:9092/bootstrap]: localhost:9092/bootstrap: Connect to ipv4#127.0.0.1:9092 failed: Connection refused (after 0ms in state CONNECT)  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rdkafka-0.27.0/src/client.rs:63)
-2021-11-07 18:11:10.819224351 UTC    ERROR rdkafka::client - librdkafka: Global error: BrokerTransportFailure (Local: Broker transport failure): localhost:9092/bootstrap: Connect to ipv4#127.0.0.1:9092 failed: Connection refused (after 0ms in state CONNECT)  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rdkafka-0.27.0/src/client.rs:92)
-2021-11-07 18:11:11.818539936 UTC    ERROR rdkafka::client - librdkafka: FAIL [thrd:localhost:9092/bootstrap]: localhost:9092/bootstrap: Connect to ipv6#[::1]:9092 failed: Connection refused (after 0ms in state CONNECT)  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rdkafka-0.27.0/src/client.rs:63)
-2021-11-07 18:11:11.819069333 UTC    ERROR rdkafka::client - librdkafka: Global error: BrokerTransportFailure (Local: Broker transport failure): localhost:9092/bootstrap: Connect to ipv6#[::1]:9092 failed: Connection refused (after 0ms in state CONNECT)  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rdkafka-0.27.0/src/client.rs:92)
-2021-11-07 18:11:22.981858316 UTC    INFO red_packet_transport::server - Starting event loop
-2021-11-07 18:11:22.982060856 UTC    ERROR rdkafka::client - librdkafka: FAIL [thrd:localhost:9092/bootstrap]: localhost:9092/bootstrap: Connect to ipv4#127.0.0.1:9092 failed: Connection refused (after 0ms in state CONNECT)  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rdkafka-0.27.0/src/client.rs:63)
-2021-11-07 18:11:22.982244119 UTC    ERROR rdkafka::client - librdkafka: Global error: BrokerTransportFailure (Local: Broker transport failure): localhost:9092/bootstrap: Connect to ipv4#127.0.0.1:9092 failed: Connection refused (after 0ms in state CONNECT)  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rdkafka-0.27.0/src/client.rs:92)
-2021-11-07 18:11:22.982279389 UTC    ERROR rdkafka::client - librdkafka: Global error: AllBrokersDown (Local: All broker connections are down): 1/1 brokers are down  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rdkafka-0.27.0/src/client.rs:92)
-2021-11-07 18:11:23.981212943 UTC    ERROR rdkafka::client - librdkafka: FAIL [thrd:localhost:9092/bootstrap]: localhost:9092/bootstrap: Connect to ipv6#[::1]:9092 failed: Connection refused (after 0ms in state CONNECT)  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rdkafka-0.27.0/src/client.rs:63)
-2021-11-07 18:11:23.981642467 UTC    ERROR rdkafka::client - librdkafka: Global error: BrokerTransportFailure (Local: Broker transport failure): localhost:9092/bootstrap: Connect to ipv6#[::1]:9092 failed: Connection refused (after 0ms in state CONNECT)  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rdkafka-0.27.0/src/client.rs:92)
-2021-11-07 18:11:24.980960776 UTC    ERROR rdkafka::client - librdkafka: FAIL [thrd:localhost:9092/bootstrap]: localhost:9092/bootstrap: Connect to ipv4#127.0.0.1:9092 failed: Connection refused (after 0ms in state CONNECT)  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rdkafka-0.27.0/src/client.rs:63)
-2021-11-07 18:11:24.981224706 UTC    ERROR rdkafka::client - librdkafka: Global error: BrokerTransportFailure (Local: Broker transport failure): localhost:9092/bootstrap: Connect to ipv4#127.0.0.1:9092 failed: Connection refused (after 0ms in state CONNECT)  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rdkafka-0.27.0/src/client.rs:92)
-2021-11-07 18:11:47.161135612 UTC    INFO red_packet_transport::server - Starting event loop
-2021-11-07 18:11:47.161375517 UTC    ERROR rdkafka::client - librdkafka: FAIL [thrd:localhost:9092/bootstrap]: localhost:9092/bootstrap: Connect to ipv6#[::1]:9092 failed: Connection refused (after 0ms in state CONNECT)  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rdkafka-0.27.0/src/client.rs:63)
-2021-11-07 18:11:47.161492780 UTC    ERROR rdkafka::client - librdkafka: Global error: BrokerTransportFailure (Local: Broker transport failure): localhost:9092/bootstrap: Connect to ipv6#[::1]:9092 failed: Connection refused (after 0ms in state CONNECT)  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rdkafka-0.27.0/src/client.rs:92)
-2021-11-07 18:11:47.161539155 UTC    ERROR rdkafka::client - librdkafka: Global error: AllBrokersDown (Local: All broker connections are down): 1/1 brokers are down  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rdkafka-0.27.0/src/client.rs:92)
-2021-11-07 18:11:48.160431153 UTC    ERROR rdkafka::client - librdkafka: FAIL [thrd:localhost:9092/bootstrap]: localhost:9092/bootstrap: Connect to ipv4#127.0.0.1:9092 failed: Connection refused (after 0ms in state CONNECT)  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rdkafka-0.27.0/src/client.rs:63)
-2021-11-07 18:11:48.160654925 UTC    ERROR rdkafka::client - librdkafka: Global error: BrokerTransportFailure (Local: Broker transport failure): localhost:9092/bootstrap: Connect to ipv4#127.0.0.1:9092 failed: Connection refused (after 0ms in state CONNECT)  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rdkafka-0.27.0/src/client.rs:92)
-2021-11-07 18:11:49.160375729 UTC    ERROR rdkafka::client - librdkafka: FAIL [thrd:localhost:9092/bootstrap]: localhost:9092/bootstrap: Connect to ipv6#[::1]:9092 failed: Connection refused (after 0ms in state CONNECT)  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rdkafka-0.27.0/src/client.rs:63)
-2021-11-07 18:11:49.160587628 UTC    ERROR rdkafka::client - librdkafka: Global error: BrokerTransportFailure (Local: Broker transport failure): localhost:9092/bootstrap: Connect to ipv6#[::1]:9092 failed: Connection refused (after 0ms in state CONNECT)  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rdkafka-0.27.0/src/client.rs:92)
-2021-11-07 18:13:00.422992480 UTC    INFO red_packet_transport::server - Starting event loop
-2021-11-07 18:16:03.059842428 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7f70fc002e48 }
-2021-11-07 18:16:30.854643303 UTC    INFO red_packet_transport::server - Message received: Message { ptr: 0x7f70fc003208 }
-2021-11-07 18:18:17.385833698 UTC    INFO red_packet_transport::server - Starting event loop
-2021-11-07 18:18:38.375077952 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:20:37.168532610 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:12.218374 UTC       INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.222975484 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.223082866 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.223126154 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.223166719 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.223205957 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.223243869 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.223285271 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.223323393 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.223363539 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.223401730 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.223437407 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.223478251 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.223515116 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.223552329 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.223593941 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.223631015 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.223672488 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.223710679 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.223748660 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.223789504 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.223828533 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.223867073 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.223905264 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.223944922 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.224135667 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.224200040 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.224231529 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.224271954 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.224317057 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.224365302 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.224406705 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.224445315 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.224566590 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.224676276 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.224753845 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.224793851 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.224872816 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.224935235 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.225005682 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.225069427 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.225134568 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.225192797 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.225254796 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.225327618 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.225395691 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.225437094 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.225475355 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.225532467 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.225587205 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.225650810 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.225707084 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.225792473 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.225863758 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.225902298 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.225998928 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.226042285 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.226082012 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.226128302 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.226219835 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.226279460 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.226322678 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.226366664 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.226411837 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.226450866 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.226499111 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.226537651 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.226578076 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.226628346 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.226706055 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.226793817 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.226867546 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.226924169 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.226998806 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.227055080 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.227111424 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.227170840 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.227219643 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.227273544 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.227327444 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.227386511 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.227436571 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.227496615 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.227545559 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.227599948 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.227650566 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.227726948 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.227795999 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.227861769 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.227913365 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.227963635 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.228014533 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.228061102 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.228114584 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.228189430 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.228258201 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.228300163 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.228341565 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.228392184 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:21:22.228441686 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:24:38.378792118 UTC    INFO red_packet_transport::server - Starting event loop
-2021-11-07 18:24:38.379255052 UTC    INFO red_packet_transport::server - Starting event loop
-2021-11-07 18:24:38.380417870 UTC    INFO red_packet_transport::server - Starting event loop
-2021-11-07 18:24:53.056988518 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.056741350 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.056805040 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.056825152 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.056841354 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.056858045 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.056878157 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.056895197 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.056914821 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.056933327 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.056950996 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.056968245 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.056991012 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.057010635 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.057026348 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.057046810 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.057071043 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.057091714 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.057109941 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.057129495 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.057148491 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.057166229 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.057184246 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.057204289 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.057220980 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.057238159 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.057255898 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.057270563 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.057309112 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.057337954 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.059774585 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.059850985 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.059902384 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.059946381 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.059988701 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.060041078 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.060084445 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.060130188 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.060183542 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.060231589 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.060273909 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.060324330 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.060370143 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.060416863 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.060454644 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.060495916 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.060533907 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.060575738 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.060613449 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.060653605 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.060695855 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.060738176 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.060781893 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.060825749 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.060872050 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.060921634 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.060965979 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.061013607 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.061055857 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.061100343 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.061145596 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.061199509 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.061247137 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.061282753 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.061327448 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.061383177 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.061427941 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.061458948 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.061524314 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.061571104 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.061608815 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.061644152 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.061685564 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.061721809 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.061759939 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.061807986 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.061856312 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.061897445 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.061943188 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.061977547 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.062027200 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.062063933 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.062115123 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.062162890 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.062207166 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.062255422 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.062304935 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.062364226 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.062417650 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.062458155 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.062489162 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.062526733 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.062560603 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.062596219 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.062639029 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.062693291 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.062732468 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.062781004 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.062843856 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:25:04.062923329 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:28:06.689605042 UTC    INFO red_packet_transport::server - Starting event loop
-2021-11-07 18:28:06.692824512 UTC    INFO red_packet_transport::server - Starting event loop
-2021-11-07 18:28:06.696063188 UTC    INFO red_packet_transport::server - Starting event loop
-2021-11-07 18:28:12.736775949 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:28:22.739963429 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:28:22.740075869 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:28:22.740115048 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:28:22.740186912 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:28:22.740215964 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:28:22.740237335 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:28:22.740345305 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 18:28:22.740381970 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 18:28:22.740400547 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 18:28:22.740425200 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 18:28:22.740439517 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 18:28:22.740461097 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 18:28:22.740461097 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:28:22.740491197 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 18:28:22.740512218 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 18:28:22.740525488 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:28:22.740530795 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 18:28:22.740576051 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:28:22.740591834 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 18:28:22.740600494 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:28:22.740609922 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:28:22.740609922 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 18:28:22.740675221 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:28:22.740732209 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:28:22.740785495 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:28:22.740835570 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:28:22.740838992 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 18:28:22.740869022 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 18:28:22.740880895 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:28:22.740918188 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:28:22.740923915 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:28:22.740938022 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 18:28:22.740957507 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 18:28:22.740957507 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:28:22.740980205 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 18:28:22.740997874 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 18:28:22.740997874 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:28:22.741021758 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 18:28:22.741035936 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 18:28:22.741035936 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:28:22.741055071 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 18:28:22.741078048 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:28:22.741095089 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 18:28:22.741109545 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 18:28:22.741116669 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:28:22.741128960 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 18:28:22.741139995 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:28:22.741143417 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 18:28:22.741172958 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:28:22.741212976 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:28:22.741221845 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 18:28:22.741253831 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:28:22.741286725 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:28:22.741314381 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:28:22.741359636 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:28:22.741386314 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:28:22.741390644 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:28:22.741420186 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:28:22.741444909 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:28:22.741475428 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:28:22.741497846 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:28:22.741518518 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:28:22.741527667 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 18:28:22.741534371 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:28:22.741554275 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:28:22.741556231 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:28:22.741600578 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:28:22.741600578 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:28:22.741672581 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:28:22.741733550 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:28:22.741785230 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:28:22.741837609 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:28:22.741899626 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:28:22.741946487 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:28:22.742001031 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:28:22.742049149 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:28:22.742105858 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:28:22.742148250 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:28:22.742206914 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:28:22.742259921 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:28:22.742306014 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:28:22.742359930 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:28:22.742398480 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:28:22.742459589 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:28:22.742519231 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:28:22.742566860 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:28:22.742616096 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:28:22.742668405 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:28:22.742706607 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:28:22.742755144 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:28:22.742811853 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:28:22.742848937 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:28:22.742916122 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:28:22.742977090 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:28:22.743015711 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:28:22.743055589 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:28:22.743100285 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:28:22.743156994 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:28:22.743238076 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:29:10.373173507 UTC    INFO red_packet_transport::server - Starting event loop
-2021-11-07 18:29:47.304106517 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 18:29:52.308762136 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 18:29:52.308856778 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 18:29:52.308910210 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 18:29:52.308967833 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 18:29:52.309015538 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 18:29:52.309080425 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 18:29:52.309135674 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 18:29:52.309178070 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 18:29:52.309220467 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 18:29:52.309290662 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 18:29:52.309360858 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 18:29:52.309417573 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 18:29:52.309458154 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 18:29:52.309498106 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 18:29:52.309534356 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 18:29:52.309572841 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 18:29:52.309613212 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 18:29:52.309650510 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 18:29:52.309684804 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 18:29:52.309722382 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 18:29:52.309765337 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 18:29:52.309821563 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 18:29:52.309906217 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 18:29:52.309953782 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 18:29:52.310009100 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 18:29:52.310071612 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 18:29:52.310144462 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 18:29:52.310189373 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 18:29:52.310236030 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 18:29:52.310277519 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 18:29:52.310333256 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:29:52.310383266 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:29:52.310430692 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:29:52.310485102 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:29:52.310557532 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:29:52.310618089 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:29:52.310661603 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:29:52.310707492 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:29:52.310794241 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:29:52.310857731 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:29:52.310900407 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:29:52.310937914 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:29:52.310996585 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:29:52.311036188 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:29:52.311112460 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:29:52.311154507 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:29:52.311213458 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:29:52.311254457 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:29:52.311305934 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:29:52.311343232 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:29:52.311389819 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:29:52.311470142 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:29:52.311552561 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:29:52.311610743 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:29:52.311665712 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:29:52.311717677 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:29:52.311763077 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:29:52.311838371 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:29:52.311903747 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:29:52.311950335 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:29:52.311994966 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:29:52.312040227 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 18:29:52.312086046 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:29:52.312131306 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:29:52.312165601 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:29:52.312201013 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:29:52.312267576 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:29:52.312348178 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:29:52.312393020 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:29:52.312441563 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:29:52.312498278 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:29:52.312551431 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:29:52.312585795 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:29:52.312644396 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:29:52.312687980 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:29:52.312745394 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:29:52.312780456 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:29:52.312833819 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:29:52.312869650 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:29:52.312905900 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:29:52.312941801 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:29:52.312976584 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:29:52.313015349 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:29:52.313052926 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:29:52.313088618 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:29:52.313121515 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:29:52.313211617 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:29:52.313259950 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:29:52.313290264 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:29:52.313338457 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:29:52.313397617 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:29:52.313439036 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:29:52.313476264 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:29:52.313537659 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:29:52.313588507 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:29:52.313621404 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:29:52.313654302 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:29:52.313696698 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 18:29:52.313739235 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 19:50:48.447783258 UTC    INFO red_packet_transport::server - Starting event loop
-2021-11-07 19:50:48.448045560 UTC    ERROR rdkafka::client - librdkafka: FAIL [thrd:localhost:9092/bootstrap]: localhost:9092/bootstrap: Connect to ipv4#127.0.0.1:9092 failed: Connection refused (after 0ms in state CONNECT)  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rdkafka-0.27.0/src/client.rs:63)
-2021-11-07 19:50:48.448143631 UTC    ERROR rdkafka::client - librdkafka: Global error: BrokerTransportFailure (Local: Broker transport failure): localhost:9092/bootstrap: Connect to ipv4#127.0.0.1:9092 failed: Connection refused (after 0ms in state CONNECT)  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rdkafka-0.27.0/src/client.rs:92)
-2021-11-07 19:50:48.448173922 UTC    ERROR rdkafka::client - librdkafka: Global error: AllBrokersDown (Local: All broker connections are down): 1/1 brokers are down  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rdkafka-0.27.0/src/client.rs:92)
-2021-11-07 19:50:49.447273452 UTC    ERROR rdkafka::client - librdkafka: FAIL [thrd:localhost:9092/bootstrap]: localhost:9092/bootstrap: Connect to ipv6#[::1]:9092 failed: Connection refused (after 0ms in state CONNECT)  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rdkafka-0.27.0/src/client.rs:63)
-2021-11-07 19:50:49.447454392 UTC    ERROR rdkafka::client - librdkafka: Global error: BrokerTransportFailure (Local: Broker transport failure): localhost:9092/bootstrap: Connect to ipv6#[::1]:9092 failed: Connection refused (after 0ms in state CONNECT)  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rdkafka-0.27.0/src/client.rs:92)
-2021-11-07 19:50:50.446844164 UTC    ERROR rdkafka::client - librdkafka: FAIL [thrd:localhost:9092/bootstrap]: localhost:9092/bootstrap: Connect to ipv4#127.0.0.1:9092 failed: Connection refused (after 0ms in state CONNECT)  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rdkafka-0.27.0/src/client.rs:63)
-2021-11-07 19:50:50.447037946 UTC    ERROR rdkafka::client - librdkafka: Global error: BrokerTransportFailure (Local: Broker transport failure): localhost:9092/bootstrap: Connect to ipv4#127.0.0.1:9092 failed: Connection refused (after 0ms in state CONNECT)  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rdkafka-0.27.0/src/client.rs:92)
-2021-11-07 19:52:03.739627331 UTC    INFO red_packet_transport::server - Starting event loop
-2021-11-07 19:54:37.842208918 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 19:54:43.811973395 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 19:54:43.812152444 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 19:54:43.812220862 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 19:54:43.812300400 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 19:54:43.812374591 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 19:54:43.812432015 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 19:54:43.812483056 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 19:54:43.812547337 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 19:54:43.812607775 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 19:54:43.812661907 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 19:54:43.812750845 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 19:54:43.812807417 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 19:54:43.812874875 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 19:54:43.812940921 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 19:54:43.813006169 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 19:54:43.813058268 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 19:54:43.813130295 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 19:54:43.813190580 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 19:54:43.813243536 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 19:54:43.813296043 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 19:54:43.813345427 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 19:54:43.813420605 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 19:54:43.813488647 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 19:54:43.813666156 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 19:54:43.813770958 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 19:54:43.813831481 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 19:54:43.814002528 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 19:54:43.814090846 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 19:54:43.814162550 UTC    INFO red_packet_transport::server - Message received partition: 1
-2021-11-07 19:54:43.814213488 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 19:54:43.814261502 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 19:54:43.814308618 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 19:54:43.814391887 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 19:54:43.814451858 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 19:54:43.814510210 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 19:54:43.814565861 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 19:54:43.814660176 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 19:54:43.814759045 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 19:54:43.814843830 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 19:54:43.814922140 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 19:54:43.815058483 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 19:54:43.815145361 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 19:54:43.815206310 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 19:54:43.815269192 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 19:54:43.815321782 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 19:54:43.815396943 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 19:54:43.815451775 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 19:54:43.815504565 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 19:54:43.815728309 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 19:54:43.815809795 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 19:54:43.815859853 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 19:54:43.815902210 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 19:54:43.815945426 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 19:54:43.815986312 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 19:54:43.816094926 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 19:54:43.816203376 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 19:54:43.816263630 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 19:54:43.816305109 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 19:54:43.816346400 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 19:54:43.816387034 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 19:54:43.816424968 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 19:54:43.816488169 UTC    INFO red_packet_transport::server - Message received partition: 0
-2021-11-07 19:54:43.816574340 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 19:54:43.816640805 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 19:54:43.816685043 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 19:54:43.816790574 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 19:54:43.816853527 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 19:54:43.816997447 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 19:54:43.817091713 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 19:54:43.817171514 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 19:54:43.817271437 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 19:54:43.817369926 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 19:54:43.817432684 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 19:54:43.817481096 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 19:54:43.817534909 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 19:54:43.817589257 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 19:54:43.817650964 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 19:54:43.817700262 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 19:54:43.817745280 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 19:54:43.817792200 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 19:54:43.817836984 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 19:54:43.817879366 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 19:54:43.817925837 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 19:54:43.817970534 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 19:54:43.818013657 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 19:54:43.818060519 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 19:54:43.818106275 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 19:54:43.818150366 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 19:54:43.818192044 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 19:54:43.818237006 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 19:54:43.818318969 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 19:54:43.818378109 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 19:54:43.818442793 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 19:54:43.818492826 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 19:54:43.818539386 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 19:54:43.818601585 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 19:54:43.821928499 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 19:54:43.822143670 UTC    INFO red_packet_transport::server - Message received partition: 2
-2021-11-07 19:54:43.822214403 UTC    INFO red_packet_transport::server - Message received partition: 2
+2021-11-10 20:37:53.068519187 UTC    ERROR rdkafka::client - librdkafka: FAIL [thrd:localhost:9092/bootstrap]: localhost:9092/bootstrap: Connect to ipv6#[::1]:9092 failed: Connection refused (after 0ms in state CONNECT)  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rdkafka-0.27.0/src/client.rs:63)
+2021-11-10 20:37:53.068743867 UTC    ERROR rdkafka::client - librdkafka: Global error: BrokerTransportFailure (Local: Broker transport failure): localhost:9092/bootstrap: Connect to ipv6#[::1]:9092 failed: Connection refused (after 0ms in state CONNECT)  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rdkafka-0.27.0/src/client.rs:92)
+2021-11-10 20:37:53.068787379 UTC    ERROR rdkafka::client - librdkafka: Global error: AllBrokersDown (Local: All broker connections are down): 1/1 brokers are down  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rdkafka-0.27.0/src/client.rs:92)
+2021-11-10 20:37:54.067464840 UTC    ERROR rdkafka::client - librdkafka: FAIL [thrd:localhost:9092/bootstrap]: localhost:9092/bootstrap: Connect to ipv4#127.0.0.1:9092 failed: Connection refused (after 0ms in state CONNECT)  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rdkafka-0.27.0/src/client.rs:63)
+2021-11-10 20:37:54.067702581 UTC    ERROR rdkafka::client - librdkafka: Global error: BrokerTransportFailure (Local: Broker transport failure): localhost:9092/bootstrap: Connect to ipv4#127.0.0.1:9092 failed: Connection refused (after 0ms in state CONNECT)  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rdkafka-0.27.0/src/client.rs:92)
+2021-11-10 20:37:55.067336387 UTC    ERROR rdkafka::client - librdkafka: FAIL [thrd:localhost:9092/bootstrap]: localhost:9092/bootstrap: Connect to ipv4#127.0.0.1:9092 failed: Connection refused (after 0ms in state CONNECT, 1 identical error(s) suppressed)  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rdkafka-0.27.0/src/client.rs:63)
+2021-11-10 20:37:55.069668189 UTC    ERROR rdkafka::client - librdkafka: Global error: BrokerTransportFailure (Local: Broker transport failure): localhost:9092/bootstrap: Connect to ipv4#127.0.0.1:9092 failed: Connection refused (after 0ms in state CONNECT, 1 identical error(s) suppressed)  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rdkafka-0.27.0/src/client.rs:92)
+2021-11-10 20:40:47.712796409 UTC    INFO red_packet_transport::server - Stream loop begin
+2021-11-10 20:45:46.262003820 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 0 from kafkatest 1636548346"]
+2021-11-10 20:45:46.262967705 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== error returned from database: 1054 (42S22): Unknown column 'envelope_id' in 'where clause'  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:45:46.267232936 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 0 from kafkatest 1636548346", "test message UserId 0 from kafkatest 1636548346", 1636548346, false, 0]
+2021-11-10 20:45:46.268529965 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== error returned from database: 1054 (42S22): Unknown column 'envelope_id' in 'field list'  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:47:00.585752110 UTC    INFO red_packet_transport::server - Stream loop begin
+2021-11-10 20:48:41.008390952 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 0 from kafkatest 1636548521"]
+2021-11-10 20:48:41.010333249 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:41.014391191 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 0 from kafkatest 1636548521", "test message UserId 0 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:41.031600321 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:41.033038920 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 4 from kafkatest 1636548521"]
+2021-11-10 20:48:41.034021662 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:41.034718124 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 4 from kafkatest 1636548521", "test message UserId 4 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:41.052638801 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:41.054470260 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 7 from kafkatest 1636548521"]
+2021-11-10 20:48:41.055619295 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:41.056584647 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 7 from kafkatest 1636548521", "test message UserId 7 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:41.071718432 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:41.073191393 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 12 from kafkatest 1636548521"]
+2021-11-10 20:48:41.074775402 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:41.076429184 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 12 from kafkatest 1636548521", "test message UserId 12 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:41.095463417 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:41.096313321 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 14 from kafkatest 1636548521"]
+2021-11-10 20:48:41.098943558 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:41.105127062 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 14 from kafkatest 1636548521", "test message UserId 14 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:41.120823840 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:41.122381520 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 15 from kafkatest 1636548521"]
+2021-11-10 20:48:41.124788893 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:41.125672530 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 15 from kafkatest 1636548521", "test message UserId 15 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:41.141454026 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:41.142444661 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 16 from kafkatest 1636548521"]
+2021-11-10 20:48:41.143833602 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:41.145095222 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 16 from kafkatest 1636548521", "test message UserId 16 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:41.162066821 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:41.163389553 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 17 from kafkatest 1636548521"]
+2021-11-10 20:48:41.171247441 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:41.171939363 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 17 from kafkatest 1636548521", "test message UserId 17 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:41.187909641 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:41.189076905 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 18 from kafkatest 1636548521"]
+2021-11-10 20:48:41.190718953 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:41.193256022 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 18 from kafkatest 1636548521", "test message UserId 18 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:41.208621472 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:41.209772882 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 21 from kafkatest 1636548521"]
+2021-11-10 20:48:41.213532809 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:41.214695743 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 21 from kafkatest 1636548521", "test message UserId 21 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:41.229269537 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:41.230691304 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 22 from kafkatest 1636548521"]
+2021-11-10 20:48:41.232142265 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:41.233666211 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 22 from kafkatest 1636548521", "test message UserId 22 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:41.250173921 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:41.251424157 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 24 from kafkatest 1636548521"]
+2021-11-10 20:48:41.252613072 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:41.253777194 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 24 from kafkatest 1636548521", "test message UserId 24 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:41.271222110 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:41.271687674 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 28 from kafkatest 1636548521"]
+2021-11-10 20:48:41.272686271 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:41.274296820 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 28 from kafkatest 1636548521", "test message UserId 28 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:41.308800917 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:41.309255446 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 29 from kafkatest 1636548521"]
+2021-11-10 20:48:41.312675384 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:41.313585002 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 29 from kafkatest 1636548521", "test message UserId 29 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:41.343948604 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:41.344932534 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 32 from kafkatest 1636548521"]
+2021-11-10 20:48:41.346006350 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:41.347370917 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 32 from kafkatest 1636548521", "test message UserId 32 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:41.373833093 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:41.374335813 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 36 from kafkatest 1636548521"]
+2021-11-10 20:48:41.375439940 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:41.376398867 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 36 from kafkatest 1636548521", "test message UserId 36 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:41.395594644 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:41.396343696 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 38 from kafkatest 1636548521"]
+2021-11-10 20:48:41.397343410 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:41.398148894 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 38 from kafkatest 1636548521", "test message UserId 38 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:41.412640624 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:41.414432552 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 39 from kafkatest 1636548521"]
+2021-11-10 20:48:41.415637391 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:41.416614127 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 39 from kafkatest 1636548521", "test message UserId 39 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:41.433969227 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:41.437355641 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 46 from kafkatest 1636548521"]
+2021-11-10 20:48:41.438554892 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:41.439507393 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 46 from kafkatest 1636548521", "test message UserId 46 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:41.456203955 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:41.456881280 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 47 from kafkatest 1636548521"]
+2021-11-10 20:48:41.458367092 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:41.459210221 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 47 from kafkatest 1636548521", "test message UserId 47 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:41.474474749 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:41.476450222 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 48 from kafkatest 1636548521"]
+2021-11-10 20:48:41.478258562 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:41.479437071 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 48 from kafkatest 1636548521", "test message UserId 48 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:41.494260829 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:41.494778216 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 49 from kafkatest 1636548521"]
+2021-11-10 20:48:41.495774577 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:41.496853003 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 49 from kafkatest 1636548521", "test message UserId 49 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:41.514335424 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:41.514983904 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 54 from kafkatest 1636548521"]
+2021-11-10 20:48:41.516646834 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:41.517280648 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 54 from kafkatest 1636548521", "test message UserId 54 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:41.533402134 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:41.533947178 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 57 from kafkatest 1636548521"]
+2021-11-10 20:48:41.534991311 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:41.536909374 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 57 from kafkatest 1636548521", "test message UserId 57 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:41.553173895 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:41.556200555 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 64 from kafkatest 1636548521"]
+2021-11-10 20:48:41.557544588 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:41.558671414 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 64 from kafkatest 1636548521", "test message UserId 64 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:41.572995105 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:41.574095042 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 69 from kafkatest 1636548521"]
+2021-11-10 20:48:41.575338922 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:41.576294147 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 69 from kafkatest 1636548521", "test message UserId 69 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:41.602990292 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:41.603500486 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 74 from kafkatest 1636548521"]
+2021-11-10 20:48:41.604758823 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:41.606517158 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 74 from kafkatest 1636548521", "test message UserId 74 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:41.623305352 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:41.624721323 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 76 from kafkatest 1636548521"]
+2021-11-10 20:48:41.626269224 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:41.627016949 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 76 from kafkatest 1636548521", "test message UserId 76 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:41.643151426 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:41.644130466 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 78 from kafkatest 1636548521"]
+2021-11-10 20:48:41.645486233 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:41.646595179 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 78 from kafkatest 1636548521", "test message UserId 78 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:41.665124318 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:41.665754569 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 81 from kafkatest 1636548521"]
+2021-11-10 20:48:41.667010672 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:41.668398286 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 81 from kafkatest 1636548521", "test message UserId 81 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:41.682621056 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:41.683415226 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 83 from kafkatest 1636548521"]
+2021-11-10 20:48:41.684697799 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:41.685984492 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 83 from kafkatest 1636548521", "test message UserId 83 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:41.703778267 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:41.705121253 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 84 from kafkatest 1636548521"]
+2021-11-10 20:48:41.706428340 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:41.707398371 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 84 from kafkatest 1636548521", "test message UserId 84 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:41.723707522 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:41.728229911 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 85 from kafkatest 1636548521"]
+2021-11-10 20:48:41.729114037 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:41.729730669 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 85 from kafkatest 1636548521", "test message UserId 85 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:41.743719609 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:41.744180774 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 92 from kafkatest 1636548521"]
+2021-11-10 20:48:41.745656598 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:41.747876726 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 92 from kafkatest 1636548521", "test message UserId 92 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:41.765585504 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:41.766063710 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 94 from kafkatest 1636548521"]
+2021-11-10 20:48:41.767362206 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:41.768091284 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 94 from kafkatest 1636548521", "test message UserId 94 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:41.785563927 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:41.786430453 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 99 from kafkatest 1636548521"]
+2021-11-10 20:48:41.787859693 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:41.789798358 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 99 from kafkatest 1636548521", "test message UserId 99 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:41.808534228 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:41.812955696 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 1 from kafkatest 1636548521"]
+2021-11-10 20:48:41.814025950 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:41.817946652 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 1 from kafkatest 1636548521", "test message UserId 1 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:41.833141968 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:41.833881661 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 2 from kafkatest 1636548521"]
+2021-11-10 20:48:41.835249650 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:41.836270316 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 2 from kafkatest 1636548521", "test message UserId 2 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:41.855395414 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:41.856807682 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 6 from kafkatest 1636548521"]
+2021-11-10 20:48:41.858036268 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:41.860100997 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 6 from kafkatest 1636548521", "test message UserId 6 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:41.879346711 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:41.880317720 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 11 from kafkatest 1636548521"]
+2021-11-10 20:48:41.881596591 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:41.882516686 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 11 from kafkatest 1636548521", "test message UserId 11 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:41.901766939 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:41.902273641 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 13 from kafkatest 1636548521"]
+2021-11-10 20:48:41.903275729 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:41.905206153 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 13 from kafkatest 1636548521", "test message UserId 13 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:41.920996520 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:41.921508180 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 19 from kafkatest 1636548521"]
+2021-11-10 20:48:41.923167619 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:41.923790537 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 19 from kafkatest 1636548521", "test message UserId 19 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:41.941942809 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:41.943391186 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 23 from kafkatest 1636548521"]
+2021-11-10 20:48:41.945036028 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:41.945797721 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 23 from kafkatest 1636548521", "test message UserId 23 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:41.965074026 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:41.965528276 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 25 from kafkatest 1636548521"]
+2021-11-10 20:48:41.967283118 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:41.968422376 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 25 from kafkatest 1636548521", "test message UserId 25 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:41.982774283 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:41.983638714 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 26 from kafkatest 1636548521"]
+2021-11-10 20:48:41.984554827 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:41.986346266 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 26 from kafkatest 1636548521", "test message UserId 26 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:42.004024733 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:42.005087863 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 30 from kafkatest 1636548521"]
+2021-11-10 20:48:42.007395712 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:42.008146580 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 30 from kafkatest 1636548521", "test message UserId 30 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:42.024924857 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:42.026463190 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 34 from kafkatest 1636548521"]
+2021-11-10 20:48:42.028275791 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:42.030870410 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 34 from kafkatest 1636548521", "test message UserId 34 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:42.044628243 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:42.046580738 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 37 from kafkatest 1636548521"]
+2021-11-10 20:48:42.047640585 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:42.048473727 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 37 from kafkatest 1636548521", "test message UserId 37 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:42.063401898 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:42.064219883 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 40 from kafkatest 1636548521"]
+2021-11-10 20:48:42.065891195 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:42.066931557 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 40 from kafkatest 1636548521", "test message UserId 40 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:42.084754107 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:42.085230148 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 52 from kafkatest 1636548521"]
+2021-11-10 20:48:42.086698848 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:42.087459634 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 52 from kafkatest 1636548521", "test message UserId 52 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:42.103330737 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:42.104099066 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 58 from kafkatest 1636548521"]
+2021-11-10 20:48:42.105204660 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:42.106545969 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 58 from kafkatest 1636548521", "test message UserId 58 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:42.125138314 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:42.126098428 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 61 from kafkatest 1636548521"]
+2021-11-10 20:48:42.127374505 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:42.128971994 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 61 from kafkatest 1636548521", "test message UserId 61 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:42.145474886 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:42.145976070 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 63 from kafkatest 1636548521"]
+2021-11-10 20:48:42.147559730 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:42.148319328 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 63 from kafkatest 1636548521", "test message UserId 63 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:42.163809306 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:42.164558986 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 68 from kafkatest 1636548521"]
+2021-11-10 20:48:42.167034595 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:42.167759900 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 68 from kafkatest 1636548521", "test message UserId 68 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:42.183722566 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:42.184647410 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 72 from kafkatest 1636548521"]
+2021-11-10 20:48:42.185763480 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:42.186708438 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 72 from kafkatest 1636548521", "test message UserId 72 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:42.202157488 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:42.203178644 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 77 from kafkatest 1636548521"]
+2021-11-10 20:48:42.204403387 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:42.205222491 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 77 from kafkatest 1636548521", "test message UserId 77 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:42.223575209 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:42.224095111 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 80 from kafkatest 1636548521"]
+2021-11-10 20:48:42.225472179 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:42.226307416 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 80 from kafkatest 1636548521", "test message UserId 80 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:42.245217121 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:42.246376703 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 82 from kafkatest 1636548521"]
+2021-11-10 20:48:42.247720178 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:42.250497153 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 82 from kafkatest 1636548521", "test message UserId 82 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:42.265542588 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:42.266347723 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 88 from kafkatest 1636548521"]
+2021-11-10 20:48:42.267586505 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:42.268947649 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 88 from kafkatest 1636548521", "test message UserId 88 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:42.285727393 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:42.286426299 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 89 from kafkatest 1636548521"]
+2021-11-10 20:48:42.288996892 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:42.290878287 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 89 from kafkatest 1636548521", "test message UserId 89 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:42.304157217 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:42.304972060 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 90 from kafkatest 1636548521"]
+2021-11-10 20:48:42.308396258 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:42.309570506 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 90 from kafkatest 1636548521", "test message UserId 90 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:42.319187985 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:42.321879684 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 91 from kafkatest 1636548521"]
+2021-11-10 20:48:42.323249489 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:42.324324143 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 91 from kafkatest 1636548521", "test message UserId 91 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:42.334078651 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:42.334607912 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 93 from kafkatest 1636548521"]
+2021-11-10 20:48:42.335818827 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:42.336697645 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 93 from kafkatest 1636548521", "test message UserId 93 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:42.347334394 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:42.347974004 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 96 from kafkatest 1636548521"]
+2021-11-10 20:48:42.349130093 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:42.350198112 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 96 from kafkatest 1636548521", "test message UserId 96 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:42.357298357 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:42.357915548 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 97 from kafkatest 1636548521"]
+2021-11-10 20:48:42.362330451 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:42.363472153 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 97 from kafkatest 1636548521", "test message UserId 97 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:42.372524264 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:42.373484098 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 3 from kafkatest 1636548521"]
+2021-11-10 20:48:42.374659533 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:42.375815623 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 3 from kafkatest 1636548521", "test message UserId 3 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:42.382122536 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:42.382737422 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 5 from kafkatest 1636548521"]
+2021-11-10 20:48:42.386057417 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:42.386729014 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 5 from kafkatest 1636548521", "test message UserId 5 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:42.394411669 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:42.395139490 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 8 from kafkatest 1636548521"]
+2021-11-10 20:48:42.398080453 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:42.398824896 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 8 from kafkatest 1636548521", "test message UserId 8 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:42.404999320 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:42.406099605 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 9 from kafkatest 1636548521"]
+2021-11-10 20:48:42.407344952 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:42.409624585 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 9 from kafkatest 1636548521", "test message UserId 9 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:42.415588925 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:42.416272466 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 10 from kafkatest 1636548521"]
+2021-11-10 20:48:42.417301862 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:42.418063416 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 10 from kafkatest 1636548521", "test message UserId 10 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:42.424891418 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:42.425752846 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 20 from kafkatest 1636548521"]
+2021-11-10 20:48:42.426826382 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:42.428416957 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 20 from kafkatest 1636548521", "test message UserId 20 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:42.433860697 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:42.434387303 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 27 from kafkatest 1636548521"]
+2021-11-10 20:48:42.436546529 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:42.437172310 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 27 from kafkatest 1636548521", "test message UserId 27 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:42.453322012 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:42.454411822 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 31 from kafkatest 1636548521"]
+2021-11-10 20:48:42.455675468 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:42.456597378 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 31 from kafkatest 1636548521", "test message UserId 31 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:42.483834098 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:42.484592788 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 33 from kafkatest 1636548521"]
+2021-11-10 20:48:42.485652217 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:42.486559321 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 33 from kafkatest 1636548521", "test message UserId 33 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:42.499535277 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:42.500285027 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 35 from kafkatest 1636548521"]
+2021-11-10 20:48:42.502973443 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:42.503904363 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 35 from kafkatest 1636548521", "test message UserId 35 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:42.516022105 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:42.516775836 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 41 from kafkatest 1636548521"]
+2021-11-10 20:48:42.518067768 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:42.519436246 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 41 from kafkatest 1636548521", "test message UserId 41 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:42.531127324 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:42.531937488 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 42 from kafkatest 1636548521"]
+2021-11-10 20:48:42.533112923 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:42.533808337 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 42 from kafkatest 1636548521", "test message UserId 42 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:42.551331616 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:42.552828951 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 43 from kafkatest 1636548521"]
+2021-11-10 20:48:42.553967161 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:42.555137219 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 43 from kafkatest 1636548521", "test message UserId 43 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:42.572037999 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:42.572563348 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 44 from kafkatest 1636548521"]
+2021-11-10 20:48:42.574034144 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:42.574915755 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 44 from kafkatest 1636548521", "test message UserId 44 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:42.589022728 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:42.590096544 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 45 from kafkatest 1636548521"]
+2021-11-10 20:48:42.590979413 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:42.591802916 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 45 from kafkatest 1636548521", "test message UserId 45 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:42.607682959 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:42.608452265 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 50 from kafkatest 1636548521"]
+2021-11-10 20:48:42.609973278 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:42.610690831 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 50 from kafkatest 1636548521", "test message UserId 50 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:42.628375723 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:42.631180635 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 51 from kafkatest 1636548521"]
+2021-11-10 20:48:42.632136488 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:42.632620701 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 51 from kafkatest 1636548521", "test message UserId 51 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:42.650160113 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:42.650931584 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 53 from kafkatest 1636548521"]
+2021-11-10 20:48:42.652332678 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:42.653450354 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 53 from kafkatest 1636548521", "test message UserId 53 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:42.669663054 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:42.670646983 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 55 from kafkatest 1636548521"]
+2021-11-10 20:48:42.671748736 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:42.672555198 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 55 from kafkatest 1636548521", "test message UserId 55 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:42.688555648 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:42.689091264 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 56 from kafkatest 1636548521"]
+2021-11-10 20:48:42.690434459 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:42.691292953 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 56 from kafkatest 1636548521", "test message UserId 56 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:42.711293656 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:42.711828364 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 59 from kafkatest 1636548521"]
+2021-11-10 20:48:42.713296506 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:42.713989964 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 59 from kafkatest 1636548521", "test message UserId 59 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:42.732729116 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:42.733654798 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 60 from kafkatest 1636548521"]
+2021-11-10 20:48:42.734803833 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:42.736134667 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 60 from kafkatest 1636548521", "test message UserId 60 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:42.753943668 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:42.754813336 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 62 from kafkatest 1636548521"]
+2021-11-10 20:48:42.756636763 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:42.757867024 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 62 from kafkatest 1636548521", "test message UserId 62 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:42.773098168 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:42.774381300 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 65 from kafkatest 1636548521"]
+2021-11-10 20:48:42.775997646 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:42.778067125 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 65 from kafkatest 1636548521", "test message UserId 65 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:42.794510721 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:42.795268573 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 66 from kafkatest 1636548521"]
+2021-11-10 20:48:42.796596962 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:42.797635857 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 66 from kafkatest 1636548521", "test message UserId 66 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:42.815836879 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:42.816438844 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 67 from kafkatest 1636548521"]
+2021-11-10 20:48:42.817555822 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:42.818743620 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 67 from kafkatest 1636548521", "test message UserId 67 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:42.834567022 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:42.835380119 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 70 from kafkatest 1636548521"]
+2021-11-10 20:48:42.836387166 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:42.837023214 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 70 from kafkatest 1636548521", "test message UserId 70 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:42.854927968 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:42.855478600 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 71 from kafkatest 1636548521"]
+2021-11-10 20:48:42.856709769 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:42.859334699 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 71 from kafkatest 1636548521", "test message UserId 71 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:42.878421104 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:42.879579777 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 73 from kafkatest 1636548521"]
+2021-11-10 20:48:42.880781264 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:42.881705479 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 73 from kafkatest 1636548521", "test message UserId 73 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:42.896434252 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:42.897140631 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 75 from kafkatest 1636548521"]
+2021-11-10 20:48:42.898990946 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:42.899779389 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 75 from kafkatest 1636548521", "test message UserId 75 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:42.916223265 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:42.916652581 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 79 from kafkatest 1636548521"]
+2021-11-10 20:48:42.917808182 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:42.918491024 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 79 from kafkatest 1636548521", "test message UserId 79 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:42.936060468 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:42.936718586 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 86 from kafkatest 1636548521"]
+2021-11-10 20:48:42.937848066 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:42.938509397 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 86 from kafkatest 1636548521", "test message UserId 86 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:42.955137305 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:42.956137857 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 87 from kafkatest 1636548521"]
+2021-11-10 20:48:42.957644970 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:42.958937181 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 87 from kafkatest 1636548521", "test message UserId 87 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:42.974773434 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:42.976672220 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 95 from kafkatest 1636548521"]
+2021-11-10 20:48:42.977690581 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:42.978718022 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 95 from kafkatest 1636548521", "test message UserId 95 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:43.006988679 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
+2021-11-10 20:48:43.008117181 UTC    INFO rbatis::plugin::log - [rbatis] [] Fetch  ==> select * from envelope where envelope_id = ?
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 98 from kafkatest 1636548521"]
+2021-11-10 20:48:43.009324883 UTC    ERROR rbatis::plugin::log - [rbatis] [] ReturnErr  <== invalid type: unit value, expected struct Envelope  (/home/lvpiche/.cargo/registry/src/github.com-1ecc6299db9ec823/rbatis-3.0.4/src/plugin/log.rs:43)
+2021-11-10 20:48:43.010056126 UTC    INFO rbatis::plugin::log - [rbatis] [] Exec   ==> insert into envelope (envelope_id,user_id,snatch_time,opened,value) values (?,?,?,?,?)
+                                                                [rbatis] [] Args   ==> ["test message EnvelopeId 98 from kafkatest 1636548521", "test message UserId 98 from kafkatest 1636548521", 1636548521, false, 0]
+2021-11-10 20:48:43.032006808 UTC    INFO rbatis::plugin::log - [rbatis] [] RowsAffected <== 1
