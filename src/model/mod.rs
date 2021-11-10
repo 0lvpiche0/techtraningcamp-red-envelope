@@ -16,6 +16,3 @@ pub async fn select_by_rid(envelope_id: &str) -> Envelope {}
 
 #[sql(db::RB, "UPDATE envelope SET opened = true WHERE envelope_id = ?")]
 pub async fn update_status_by_rid(envelope_id: &str) -> () {}
-
-// #[sql(db::RB, "INSERT INTO envelope (rid,uid,snatch_time,status,value) VALUES (?, ?, ?, ?, ?)")]
-// pub async fn add_envelope(rid: &Envelope) -> () {}

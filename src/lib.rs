@@ -6,6 +6,7 @@ mod model;
 mod db;
 mod kafka;
 mod utils;
+mod config;
 
 pub struct App {
     config: std::collections::HashMap<String, String>,
@@ -18,7 +19,8 @@ impl App {
     pub async fn new() -> App {
         db::new_rb().await;
         let (config, topics) = kafka::kafka_config_init();
-        let num_workers = utils::get_env("NUM_WORKERS", "1").parse::<usize>().unwrap();
+        let num_workers = utils::get_env("KAFKA_NUM_WORKERS", config::DAFAULT_KAFKA_NUM_WORKERS)
+            .parse::<usize>().unwrap();
         App {
             config,
             topics,

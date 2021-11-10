@@ -1,4 +1,4 @@
-use crate::utils;
+use crate::{config, utils};
 use rbatis::rbatis::Rbatis;
 
 lazy_static::lazy_static! {
@@ -8,23 +8,18 @@ lazy_static::lazy_static! {
 pub async fn new_rb() {
     let url = format!(
         "mysql://{}:{}@{}:{}/{}",
-        utils::get_env("MYSQL_ROOT_USERNAME", "root"),
-        utils::get_env("MYSQL_ROOT_PASSWORD", "lvpiche"),
-        utils::get_env("MYSQL_SERVICE_HOST", "localhost"),
-        utils::get_env("MYSQL_SERVICE_PORT", "3306"),
-        utils::get_env("MYSQL_DB_NAME", "MYDB"),
+        utils::get_env("MYSQL_ROOT_USERNAME", config::DAFAULT_MYSQL_ROOT_USERNAME),
+        utils::get_env("MYSQL_ROOT_PASSWORD", config::DAFAULT_MYSQL_ROOT_PASSWORD),
+        utils::get_env("MYSQL_SERVICE_HOST", config::DAFAULT_MYSQL_SERVICE_HOST),
+        utils::get_env("MYSQL_SERVICE_PORT", config::DAFAULT_MYSQL_SERVICE_PORT),
+        utils::get_env("MYSQL_DB_NAME", config::DAFAULT_MYSQL_DB_NAME),
     );
     RB.link(&url).await.unwrap();
     RB.as_executor().exec(
         "create table if not exists envelope(envelope_id varchar(255) primary key not null,user_id varchar(255) not null,value int not null,opened boolean not null,snatch_time bigint not null);"
         , Vec::new()).await.unwrap();
-    // db max_connections
-    // use crate::core::db::DBPoolOptions;
-    // let mut opt =DBPoolOptions::new();
-    // opt.max_connections=100;
-    // rb.link_opt(url,&opt).await.unwrap();
     // log output
-    fast_log::init_log("requests.log", 1000, log::Level::Info, None, true).unwrap();
+    // fast_log::init_log("requests.log", 1000, log::Level::Info, None, true).unwrap();
 }
 
 

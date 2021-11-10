@@ -22,11 +22,6 @@ pub async fn run_async_processor(consumer: StreamConsumer) {
     let stream_processor = main.stream().try_for_each(|borrowed_message| {
         let commiter = consumer_ref.clone();
         async move {
-            // Here are the different ways to deal with it, but I think that the task is expensive_computation in this case (lvpiche)
-            // Process each message
-            // record_borrowed_message_receipt(&borrowed_message).await;
-            // Borrowed messages can't outlive the consumer they are received from, so they need to
-            // be owned in order to be sent to a separate thread.
             let envelope: Option<model::Envelope> = borrowed_message.payload_view::<str>()
                 .and_then(|msg| msg_to_envelope(msg));
             if let Some(envelope) = envelope {
@@ -41,6 +36,7 @@ pub async fn run_async_processor(consumer: StreamConsumer) {
             Ok(())
         }
     });
+    info!("Stream loop begin");
     stream_processor.await.expect("stream processing failed");
     info!("Stream processing terminated");
 }
