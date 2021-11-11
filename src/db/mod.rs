@@ -8,11 +8,11 @@ lazy_static::lazy_static! {
 pub async fn new_rb() {
     let url = format!(
         "mysql://{}:{}@{}:{}/{}",
-        utils::get_env("MYSQL_ROOT_USERNAME", config::DAFAULT_MYSQL_ROOT_USERNAME),
-        utils::get_env("MYSQL_ROOT_PASSWORD", config::DAFAULT_MYSQL_ROOT_PASSWORD),
+        utils::get_env("MYSQL_USERNAME", config::DAFAULT_MYSQL_ROOT_USERNAME),
+        utils::get_env("MYSQL_PASSWORD", config::DAFAULT_MYSQL_ROOT_PASSWORD),
         utils::get_env("MYSQL_SERVICE_HOST", config::DAFAULT_MYSQL_SERVICE_HOST),
         utils::get_env("MYSQL_SERVICE_PORT", config::DAFAULT_MYSQL_SERVICE_PORT),
-        utils::get_env("MYSQL_DB_NAME", config::DAFAULT_MYSQL_DB_NAME),
+        utils::get_env("MYSQL_DATABASE", config::DAFAULT_MYSQL_DB_NAME),
     );
     RB.link(&url).await.unwrap();
     RB.as_executor().exec(
@@ -32,11 +32,11 @@ mod test {
         fast_log::init_log("log/requests.log", 1000, log::Level::Info, None, true).unwrap();
         let url = format!(
             "mysql://{}:{}@{}:{}/{}",
-utils::get_env("MYSQL_ROOT_USERNAME", config::DAFAULT_MYSQL_ROOT_USERNAME),
-        utils::get_env("MYSQL_ROOT_PASSWORD", config::DAFAULT_MYSQL_ROOT_PASSWORD),
-        utils::get_env("MYSQL_SERVICE_HOST", config::DAFAULT_MYSQL_SERVICE_HOST),
-        utils::get_env("MYSQL_SERVICE_PORT", config::DAFAULT_MYSQL_SERVICE_PORT),
-        utils::get_env("MYSQL_DB_NAME", config::DAFAULT_MYSQL_DB_NAME),
+            utils::get_env("MYSQL_USERNAME", config::DAFAULT_MYSQL_ROOT_USERNAME),
+            utils::get_env("MYSQL_PASSWORD", config::DAFAULT_MYSQL_ROOT_PASSWORD),
+            utils::get_env("MYSQL_SERVICE_HOST", config::DAFAULT_MYSQL_SERVICE_HOST),
+            utils::get_env("MYSQL_SERVICE_PORT", config::DAFAULT_MYSQL_SERVICE_PORT),
+            utils::get_env("MYSQL_DATABASE", config::DAFAULT_MYSQL_DB_NAME),
         );
         RB.link(&url).await.unwrap();
         RB.as_executor().exec(

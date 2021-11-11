@@ -20,7 +20,7 @@ pub fn new_stream_consumer(config: &HashMap<String, String>, topics: &[String]) 
 }
 
 pub fn kafka_config_init() -> (HashMap<String, String>, Vec<String>) {
-    let brokers = utils::get_env("KAFAKA_BROKERS", config::DAFAULT_KAFAKA_BROKERS);
+    let brokers = utils::get_env("KAFKA_BROKERS", config::DAFAULT_KAFAKA_BROKERS);
     let group_id = utils::get_env("KAFKA_GROUP_ID", config::DAFAULT_KAFKA_GROUP_ID);
     
     let mut config = std::collections::HashMap::new();
