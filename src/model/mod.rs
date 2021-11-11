@@ -11,8 +11,8 @@ pub struct Envelope {
 }
 
 
-#[sql(db::RB, "select * from envelope where envelope_id = ?")]
-pub async fn select_by_rid(envelope_id: &str) -> Envelope {}
+// #[sql(db::RB, "select * from envelope where envelope_id = ?")]
+// pub async fn select_by_rid(envelope_id: &str) -> Envelope {}
 
 #[sql(db::RB, "UPDATE envelope SET opened = true WHERE envelope_id = ?")]
 pub async fn update_status_by_rid(envelope_id: &str) -> () {}

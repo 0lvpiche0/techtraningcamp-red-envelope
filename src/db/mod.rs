@@ -32,11 +32,11 @@ mod test {
         fast_log::init_log("log/requests.log", 1000, log::Level::Info, None, true).unwrap();
         let url = format!(
             "mysql://{}:{}@{}:{}/{}",
-            utils::get_env("MYSQL_ROOT_USERNAME", "root"),
-            utils::get_env("MYSQL_ROOT_PASSWORD", "lvpiche"),
-            utils::get_env("MYSQL_SERVICE_HOST", "localhost"),
-            utils::get_env("MYSQL_SERVICE_PORT", "3306"),
-            utils::get_env("MYSQL_DB_NAME", "TEST"),
+utils::get_env("MYSQL_ROOT_USERNAME", config::DAFAULT_MYSQL_ROOT_USERNAME),
+        utils::get_env("MYSQL_ROOT_PASSWORD", config::DAFAULT_MYSQL_ROOT_PASSWORD),
+        utils::get_env("MYSQL_SERVICE_HOST", config::DAFAULT_MYSQL_SERVICE_HOST),
+        utils::get_env("MYSQL_SERVICE_PORT", config::DAFAULT_MYSQL_SERVICE_PORT),
+        utils::get_env("MYSQL_DB_NAME", config::DAFAULT_MYSQL_DB_NAME),
         );
         RB.link(&url).await.unwrap();
         RB.as_executor().exec(
@@ -51,8 +51,9 @@ mod test {
         };
         RB.save(&envelope, &[]).await.unwrap();
         // model::add_envelope(&envelope).await.unwrap();
-        let r= model::select_by_rid(&envelope.envelope_id).await.unwrap();
+        let r: Option<model::Envelope> = RB.fetch_by_column("envelope_id", &envelope.envelope_id).await.unwrap();
         // println!("{:?}", r);
+        let r = r.unwrap();
         assert_eq!(r, envelope);
         model::update_status_by_rid(&envelope.envelope_id).await.unwrap();
         assert_eq!(

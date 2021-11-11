@@ -66,16 +66,18 @@ fn msg_to_envelope(msg: Result<&str, Utf8Error>) -> Option<model::Envelope> {
 // so it it possible that msg is unordered
 async fn envelope_server(envelope: model::Envelope) -> std::io::Result<()> {
     // Check whether there is this record in the database
-    match model::select_by_rid(&envelope.envelope_id).await {
+    let res: Option<model::Envelope> = 
+        db::RB.fetch_by_column("envelope_id", &envelope.envelope_id).await?;
+    match res {
         // if there is the record in the database -> update status
-        Ok(r) => {
+        Some(r) => {
             if envelope.opened  && !r.opened {
                 model::update_status_by_rid(&envelope.envelope_id).await?;
             }
             Ok(())
         },
         // else -> insert
-        Err(_) => {
+        None => {
             db::RB.save(&envelope, &[]).await?;
             Ok(())
         }
