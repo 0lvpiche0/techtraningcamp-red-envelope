@@ -2091,7 +2091,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "techtraingcamp-red-envelope"
+name = "techtraningcamp-red-envelope"
 version = "0.1.0"
 dependencies = [
  "bson",

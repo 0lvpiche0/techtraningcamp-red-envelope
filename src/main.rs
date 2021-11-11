@@ -1,4 +1,4 @@
-use techtraingcamp_red_envelope::App;
+use techtraningcamp_red_envelope::App;
 
 
 #[tokio::main]
